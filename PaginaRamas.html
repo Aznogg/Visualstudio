@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Botones Clickeables</title>
+</head>
+<body>
+
+<button class="custom-button" onclick="handleButtonClick(1)">Botón 1</button>
+<button class="custom-button" onclick="handleButtonClick(2)">Botón 2</button>
+<button class="custom-button" onclick="handleButtonClick(3)">Botón 3</button>
+
+<script>
+  function handleButtonClick(buttonNumber) {
+    switch (buttonNumber) {
+      case 1:
+        alert('Hiciste clic en el Botón 1');
+        break;
+      case 2:
+        alert('Hiciste clic en el Botón 2');
+        break;
+      case 3:
+        alert('Hiciste clic en el Botón 3');
+        break;
+      default:
+        break;
+    }
+  }
+</script>
+</body>
+</html>

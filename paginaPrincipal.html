@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaginaPrincipal</title>
+<style>
+     body {
+
+    background-size: cover; /* Ajusta la imagen de fondo al tamaño del viewport */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    background-attachment: fixed; /* Fija la imagen de fondo mientras se desplaza */
+    background-position: center center; /* Centra la imagen de fondo */
+  }
+  p{
+    color: forestgreen; /* Color de texto en hexadecimal */
+    font-family: 'Times New Roman', Times, serif; /* Tipo de fuente */
+    font-size: 15px; /* Tamaño de fuente */
+    text-align: center; /* Alineación de texto */
+    margin-top: 20px; /* Margen superior */
+  }
+     h1 {
+    color: forestgreen; /* Color de texto en hexadecimal */
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    font-size: 28px; /* Tamaño de fuente */
+    text-align: center; /* Alineación de texto */
+    margin-top: 20px; /* Margen superior */
+     }
+
+    .button-container {
+    display: flex;
+    justify-content: center;
+    }
+
+  .NoImg {
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    background-color: forestgreen; /* Color de fondo */
+    color: white; /* Color de texto */
+    border: none;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+    width: 150px;
+    border-radius: 5px; /* Borde redondeado */
+    font-family: fantasy; /* Cambia el tipo de fuente aquí */
+  }
+
+.btnCentro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 0%);
+}
+
+  /* Estilos para el botón de más opciones */
+  .more-options-button {
+    background-color: darkorange; /* Cambia el color de fondo */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* Estilos para el menú desplegable */
+  .options-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Posición debajo del botón "Más Opciones" */
+    right: 0;
+    background-color:forestgreen;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .options-dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .options-dropdown a:hover {
+    background-color: darksalmon;
+  }
+
+  .more-options-button:hover .options-dropdown,
+  .options-dropdown:hover {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+    <h1>Grupo Scout Tomas A. Echevarria</h1>
+    <p>N° 389 | Zona:41 | Distrito:4 </p>
+
+    <!-- Botón de Más Opciones -->
+    <div class="custom-button more-options-button">Más Opciones
+        <div class="options-dropdown">
+          <a href="#" onclick="AbrirOpcion1()">Opción 1</a>
+          <a href="#" onclick="AbrirOpcion2()">Opción 2</a>
+          <a href="#" onclick="AbrirOpcion3()">Opción 3</a>
+        </div>
+      </div>
+
+<div class=".btnCentro"></div>
+
+<!-- Ramas -->
+<button class="NoImg" onclick="abrirPaginaRamas()" > Ramas </button>
+    <img class="btnCentro" width="60" height="60" >
+</button>
+
+<!-- Historia -->
+<button class="NoImg" onclick="abrirPaginaHistoria()" > Historia </button>
+    <img class="btnCentro" width="60" height="60" >
+</button>
+
+<!-- Actividades-->
+<button class="NoImg" onclick="abrirPaginaActividades()" > Actividades </button>
+    <img class="btnCentro" width="60" height="60" >
+</button>
+
+<script>
+  function abrirPaginaRamas() {
+    window.location.href="PaginaRamas.html";
+  }
+  function abrirPaginaHistoria() {
+    window.location.href="PaginaHistoria.html";
+  }
+  function abrirPaginaActividades() {
+    window.location.href="PaginaActividades.html";
+  }
+  function AbrirOpcion1() {
+
+  }
+  function AbrirOpcion2() {
+    
+}
+function AbrirOpcion3() {
+    
+}
+</script>
+</body>
+</html>
