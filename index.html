@@ -92,16 +92,30 @@
 </style>
 </head>
 <body>
+ <header>
+        <h1>Mi Página de Noticias</h1>
+    </header>
+    <main>
+        <!-- Formulario para agregar noticias -->
+        <form id="formulario-noticias">
+            <h2>Agregar Noticia</h2>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="contenido">Contenido:</label>
+            <textarea id="contenido" required></textarea>
+            <button type="submit">Publicar Noticia</button>
+        </form>
 
-     <form id="formulario-noticias">
-    <h2>Agregar Noticia</h2>
-    <label for="titulo">Título:</label>
-    <input type="text" id="titulo" required>
-    <label for="contenido">Contenido:</label>
-    <textarea id="contenido" required></textarea>
-    <button type="submit">Publicar Noticia</button>
-</form>
-
+        <!-- Contenedor de noticias -->
+        <div id="noticias">
+            <!-- Aquí se mostrarán las noticias -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Mi Página de Noticias</p>
+    </footer>
+    <script src="script.js"></script>
+     
     <h1>Grupo Scout Tomas A. Echevarria</h1>
     <p>N° 389 | Zona:41 | Distrito:4 </p>
 
