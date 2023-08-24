@@ -1,79 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página de Publicaciones</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
-    form {
-        margin-bottom: 20px;
-    }
-    textarea {
-        width: 100%;
-        height: 100px;
-    }
-    .post {
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-bottom: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página de Noticias</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Publicaciones</h1>
-    
-    <form id="postForm">
-        <label for="title">Título:</label><br>
-        <input type="text" id="title" name="title" required><br>
-        <label for="message">Mensaje:</label><br>
-        <textarea id="message" name="message" required></textarea><br>
-        <button type="submit">Publicar</button>
-    </form>
-    
-    <div id="posts"></div>
-    
-    <script>
-        const postForm = document.getElementById('postForm');
-        const postsContainer = document.getElementById('posts');
-        
-        // Cargar publicaciones guardadas en el almacenamiento local al cargar la página
-        const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
-        savedPosts.forEach(post => {
-            const postElement = document.createElement('div');
-            postElement.classList.add('post');
-            postElement.innerHTML = `
-                <h2>${post.title}</h2>
-                <p>${post.message}</p>
-            `;
-            postsContainer.appendChild(postElement);
-        });
-        
-        postForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const title = postForm.title.value;
-            const message = postForm.message.value;
-            
-            const postElement = document.createElement('div');
-            postElement.classList.add('post');
-            postElement.innerHTML = `
-                <h2>${title}</h2>
-                <p>${message}</p>
-            `;
-            
-            postsContainer.appendChild(postElement);
-            
-            // Guardar la nueva publicación en el almacenamiento local
-            const newPost = { title, message };
-            savedPosts.push(newPost);
-            localStorage.setItem('posts', JSON.stringify(savedPosts));
-            
-            postForm.reset();
-        });
-    </script>
+    <header>
+        <h1>Mi Página de Noticias</h1>
+    </header>
+    <main>
+        <!-- Formulario para agregar noticias -->
+        <form id="formulario-noticias">
+            <h2>Agregar Noticia</h2>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="contenido">Contenido:</label>
+            <textarea id="contenido" required></textarea>
+            <button type="submit">Publicar Noticia</button>
+        </form>
+
+        <!-- Contenedor de noticias -->
+        <div id="noticias">
+            <!-- Aquí se mostrarán las noticias -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Mi Página de Noticias</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
