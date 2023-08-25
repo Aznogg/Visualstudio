@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PaginaPrincipal</title>
 <style>
-     body {
 
+     body {
+background-image: url(https://i.imgur.com/j1rUH2H.jpeg);
     background-size: cover; /* Ajusta la imagen de fondo al tamaño del viewport */
     background-repeat: no-repeat; /* Evita que se repita la imagen */
     background-attachment: fixed; /* Fija la imagen de fondo mientras se desplaza */
     background-position: center center; /* Centra la imagen de fondo */
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
+  /* Estilos para el footer */
+footer {
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    font-size: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para los enlaces dentro del footer */
+footer a {
+    color: black; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 10px; /* Margen entre enlaces */
+}
+
+  .divider {
+    width: 93%; /* Ajusta el ancho de la línea */
+    height: 2px;
+    background-color: green; /* Cambia el color a tu preferencia */
+    margin: 80px auto; /* Ajusta los márgenes para centrar la línea horizontal */
+  }
+  .content {
+    text-align: center;
+    margin-top: 40px;
+  }
+
   p{
-    color: forestgreen; /* Color de texto en hexadecimal */
+    color: black; /* Color de texto en hexadecimal */
     font-family: 'Times New Roman', Times, serif; /* Tipo de fuente */
     font-size: 15px; /* Tamaño de fuente */
     text-align: center; /* Alineación de texto */
-    margin-top: 20px; /* Margen superior */
+    margin-top: 5px; /* Margen superior */
+    text-align: center;
   }
      h1 {
-    color: forestgreen; /* Color de texto en hexadecimal */
-    font-family: Arial, sans-serif; /* Tipo de fuente */
-    font-size: 28px; /* Tamaño de fuente */
+    color: darkgreen; /* Color de texto en hexadecimal */
+    font-family: sans-serif; /* Tipo de fuente */
+    font-size: 29px; /* Tamaño de fuente */
     text-align: center; /* Alineación de texto */
-    margin-top: 20px; /* Margen superior */
+    margin-top: 15px; /* Margen superior */
+    text-align: center;
      }
 
     .button-container {
     display: flex;
     justify-content: center;
+    text-align: center;
     }
 
   .NoImg {
-    padding: 10px 20px; /* Espaciado interno del botón */
-    font-size: 16px; /* Tamaño de fuente */
-    background-color: forestgreen; /* Color de fondo */
-    color: white; /* Color de texto */
+    padding: 13px 23px; /* Espaciado interno del botón */
+    font-size: 14px; /* Tamaño de fuente */
+    background-color: darkgreen; /* Color de fondo */
+    color: black; /* Color de texto */
     border: none;
     cursor: pointer;
     margin: 10px auto;
     display: block;
-    width: 150px;
-    border-radius: 5px; /* Borde redondeado */
-    font-family: fantasy; /* Cambia el tipo de fuente aquí */
+    width: 250px;
+    text-align: center;
+    border-radius: 25px; /* Borde redondeado */
+    font-family: sans-serif; /* Cambia el tipo de fuente aquí */
+  }
+  .NoImg2 {
+    padding: 13px 23px; /* Espaciado interno del botón */
+    font-size: 14px; /* Tamaño de fuente */
+    background-color: black; /* Color de fondo */
+    color: darkgreen; /* Color de texto */
+    border: none;
+    cursor: pointer;
+    margin: 10px auto;
+    display: block;
+    width: 250px;
+    text-align: center;
+    border-radius: 25px; /* Borde redondeado */
+    font-family: sans-serif; /* Cambia el tipo de fuente aquí */
   }
 
 .btnCentro {
@@ -56,19 +107,22 @@
 
   /* Estilos para el botón de más opciones */
   .more-options-button {
-    background-color: darkorange; /* Cambia el color de fondo */
-    position: fixed;
-    top: 20px;
-    right: 20px;
+    background-color: transparent; /* Cambia el color de fondo */
+    position: absolute;
+    top: 40px;
+    left: 60px;
+    font-size: 30px;
+    z-index: 1;
   }
 
   /* Estilos para el menú desplegable */
   .options-dropdown {
     display: none;
     position: absolute;
+    font-size: 15px;
     top: 100%; /* Posición debajo del botón "Más Opciones" */
-    right: 0;
-    background-color:forestgreen;
+    left: 0;
+    background-color:darkgreen;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -79,6 +133,7 @@
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-size: 15px;
   }
 
   .options-dropdown a:hover {
@@ -89,60 +144,40 @@
   .options-dropdown:hover {
     display: block;
   }
+  
+
 </style>
 </head>
 <body>
- <header>
-        <h1>Mi Página de Noticias</h1>
-    </header>
-    <main>
-        <!-- Formulario para agregar noticias -->
-        <form id="formulario-noticias">
-            <h2>Agregar Noticia</h2>
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" required>
-            <label for="contenido">Contenido:</label>
-            <textarea id="contenido" required></textarea>
-            <button type="submit">Publicar Noticia</button>
-        </form>
-
-        <!-- Contenedor de noticias -->
-        <div id="noticias">
-            <!-- Aquí se mostrarán las noticias -->
-        </div>
-    </main>
-    <footer>
-        <p>&copy; 2023 Mi Página de Noticias</p>
-    </footer>
-    <script src="script.js"></script>
-     
-    <h1>Grupo Scout Tomas A. Echevarria</h1>
-    <p>N° 389 | Zona:41 | Distrito:4 </p>
+      <div class="divider"></div>
+      <div class="content"></div>
 
     <!-- Botón de Más Opciones -->
-    <div class="custom-button more-options-button , fas fa-bars"
+    <div class="custom-button more-options-button , fas fa-bars">
         <div class="options-dropdown">
           <a href="#" onclick="AbrirOpcion1()">Opción 1</a>
           <a href="#" onclick="AbrirOpcion2()">Opción 2</a>
           <a href="#" onclick="AbrirOpcion3()">Opción 3</a>
-        </div>
-      </div>
+          </div>
+          </div>
 
-<div class=".btnCentro"></div>
+
+    <h1>GRUPO TOMAS A. ECHEVARRIA </h1>
+    <p><b>N° 389 | Zona:41 | Distrito:4</b> </p>
 
 <!-- Ramas -->
-<button class="NoImg" onclick="abrirPaginaRamas()" > Ramas </button>
-    <img class="btnCentro" width="60" height="60" >
+<button class="NoImg" onclick="abrirPaginaRamas()" ><b>RAMAS</b> </button>
+    <img class="btnCentro" >
 </button>
 
 <!-- Historia -->
-<button class="NoImg" onclick="abrirPaginaHistoria()" > Historia </button>
-    <img class="btnCentro" width="60" height="60" >
+<button class="NoImg2" onclick="abrirPaginaHistoria()" ><b>HISTORIA</b></button>
+    <img class="btnCentro" >
 </button>
 
 <!-- Actividades-->
-<button class="NoImg" onclick="abrirPaginaActividades()" > Actividades </button>
-    <img class="btnCentro" width="60" height="60" >
+<button class="NoImg" onclick="abrirPaginaActividades()" ><b>ACTIVIDADES</b></button>
+    <img class="btnCentro" >
 </button>
 
 <script>
@@ -156,7 +191,7 @@
     window.location.href="PaginaActividades.html";
   }
   function AbrirOpcion1() {
-
+    window.location.href="Opcion1.html";
   }
   function AbrirOpcion2() {
     
@@ -166,4 +201,7 @@ function AbrirOpcion3() {
 }
 </script>
 </body>
+<footer>
+  <p><a href="#">Facebook</a> - <a href="#">Instagram</a> - <a href="#">Contacto</a></p>
+</footer>
 </html>
